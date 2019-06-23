@@ -1,1 +1,16 @@
-h1 Markup examples
+.container
+  h1 Store locations
+  table [class="table"]
+    thead
+      tr
+        th #
+        th Codename
+        th Address
+        th Phone
+    tbody
+      - @stores.each do |store|
+        tr
+          th = store.id
+          td = store.codename
+          td = store.address
+          td = store.phone

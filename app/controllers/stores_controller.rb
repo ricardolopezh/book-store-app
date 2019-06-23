@@ -20,6 +20,10 @@ class StoresController < ApplicationController
     @store = Store.find(params[:id])
   end
 
+  def index
+    @stores = Store.all.order("created_at DESC")
+  end
+
   private
 
   def post_params
