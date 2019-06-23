@@ -1,0 +1,15 @@
+.container
+  h1 Add a new store
+  .row
+	  div [class="col-12 col-lg-12"]
+	    h2  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus dicta accusamus architecto hic sint consequatur, eum sed ut itaque dolores suscipit. Labore eius molestiae minima sapiente deserunt, enim, facere iure!
+	    .row
+	      div [class="col-12"]
+			    = form_for(@store) do |f|
+				      = f.label :codename
+				      = f.text_field :codename, :class => "form-control"
+				      = f.label :address
+				      = f.text_field :address, :class => "form-control"
+				      = f.label :phone
+				      = f.text_field :phone, :class => "form-control"
+				      = submit_tag "Add new store", :class => "btn btn-primary form-control"
