@@ -16,9 +16,9 @@ html
         div [class="collapse navbar-collapse", id="navbarNav"]
           ul [class="navbar-nav"]
             li [class="nav-item"]
-              a [class="nav-link" href="#"] Home
+              = link_to 'Home', stores_path, class: 'nav-link'
             li [class="nav-item"]
-              a [class="nav-link" href="#"] Stores
+              = link_to 'Stores', stores_path, class: 'nav-link'
             li [class="nav-item"]
-              a [class="nav-link" href="#"] Books
+              = link_to 'Books', stores_path, class: 'nav-link'
     = yield
