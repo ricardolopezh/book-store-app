@@ -37,6 +37,7 @@ gem 'bootstrap', '~> 4.3.1'
 gem 'jquery-rails'
 gem 'will_paginate', '>= 3.1.7'
 gem 'bootstrap-will_paginate', '1.0.0'
+gem 'faker'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

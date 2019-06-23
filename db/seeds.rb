@@ -5,3 +5,10 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+50.times do
+  Store.create([{
+    codename: Faker::Alphanumeric.alphanumeric(5).upcase, 
+    address: Faker::Address.street_address, 
+    phone: Faker::PhoneNumber.cell_phone
+    }])
+end
