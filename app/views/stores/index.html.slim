@@ -15,4 +15,5 @@
           td = store.codename
           td = store.address
           td = store.phone
-  = will_paginate @stores
+
+  = will_paginate(@stores, :renderer => WillPaginate::ActionView::Bootstrap4LinkRenderer, class: "pagination justify-content-center")
