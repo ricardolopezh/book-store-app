@@ -1,16 +1,17 @@
 .container
   h1 Store locations
+  = link_to 'Add new store', newstore_path, class: 'btn btn-success'
   table [class="table"]
     thead
       tr
-        th #
+        th ID
         th Codename
         th Address
         th Phone
     tbody
       - @stores.each do |store|
         tr
-          th = store.id
+          th = link_to store.id, store
           td = store.codename
           td = store.address
           td = store.phone
