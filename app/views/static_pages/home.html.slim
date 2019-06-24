@@ -1,3 +1,8 @@
 .row
 div [class="col-12"]
-  h1 Welcome this is Home
+  .jumbotron
+    h1 [class="display-4"] Hello, user!
+    p [class="lead"] This is an application made with Ruby on Rails to manage a book store.
+    hr [class="my-4"]
+    p You can manage both book stores and books with this app.
+    = link_to 'Learn more', home_path, class: 'btn btn-primary btn-lg'
