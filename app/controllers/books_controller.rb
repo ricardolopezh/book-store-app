@@ -4,6 +4,19 @@ class BooksController < ApplicationController
   end
 
   def new
+    @book = Book.new
+  end
+
+  def create
+    @book = Book.new(book_params)
+
+    if @book.save
+      flash[:success] = "Book added"
+      redirect_to books_path
+    else
+      #Need to improve this
+      render 'new'
+    end
   end
 
   def show
