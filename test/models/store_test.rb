@@ -26,7 +26,7 @@ class StoreTest < ActiveSupport::TestCase
   end
 
   test "codename should not be too long" do
-    @store.codename = "a" * 6
+    @store.codename = "a" * 7
     assert_not @store.valid?
   end
 
@@ -36,7 +36,7 @@ class StoreTest < ActiveSupport::TestCase
   end
 
   test "phone should not be too long" do
-    @store.phone = "a" * 11
+    @store.phone = "a" * 21
     assert_not @store.valid?
   end
 end
