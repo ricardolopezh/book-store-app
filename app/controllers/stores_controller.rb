@@ -39,6 +39,7 @@ class StoresController < ApplicationController
   def destroy
     @stores = Store.find(params[:id])
     @stores.destroy
+    flash[:danger] = "Store location deleted"
     redirect_to stores_path
   end
 
