@@ -12,6 +12,7 @@ class StoresController < ApplicationController
     if @store.save
       redirect_to @store
     else
+    	#Need to improve this
       render 'new'
     end
   end
