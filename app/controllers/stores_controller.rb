@@ -24,6 +24,12 @@ class StoresController < ApplicationController
     @stores = Store.all.order("created_at DESC").paginate(page: params[:page], per_page: 10)
   end
 
+  def destroy
+    @stores = Store.find(params[:id])
+    @stores.destroy
+    redirect_to stores_path
+  end
+
   private
 
   def post_params

@@ -2,12 +2,13 @@
   h1 Store locations
   = link_to 'Add new store', newstore_path, class: 'btn btn-success'
   table [class="table"]
-    thead
+    thead [class="thead-dark"]
       tr
         th ID
         th Codename
         th Address
         th Phone
+        th Manage
     tbody
       - @stores.each do |store|
         tr
@@ -15,5 +16,10 @@
           td = store.codename
           td = store.address
           td = store.phone
+          td
+            span
+              = link_to "Edit ", store
+            span
+              = link_to "Delete", store, method: :delete, data: { confirm: "Are you sure you want to delete this store?" }
 
   = will_paginate(@stores, :renderer => WillPaginate::ActionView::Bootstrap4LinkRenderer, class: "pagination justify-content-center")
