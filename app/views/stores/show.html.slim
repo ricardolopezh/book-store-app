@@ -1,10 +1,8 @@
 .container
-  h1 Stores
+  h1 Store
   .row
 	  div [class="col-12 col-lg-12"]
-	    h2
-          = @store.codename
-        p
-          = @store.address
-        p
-          = @store.phone
+	    h3 Codename: #{@store.codename} 
+        h4 Address: #{@store.address}
+        h4 Phone: #{@store.phone}
+        
