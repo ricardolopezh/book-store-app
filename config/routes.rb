@@ -5,5 +5,5 @@ Rails.application.routes.draw do
   get '/newstore', to: 'stores#new'
   get '/stores', to: 'store#index'
   get '/home', to: 'static_pages#home'
-  root 'stores#index'
+  root 'static_pages#home'
 end
