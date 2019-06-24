@@ -1,2 +1,14 @@
 .container
-  h1 Update store location
+  h1 Update store information
+  .row
+	  div [class="col-12 col-lg-12"]
+	    .row
+	      div [class="col-12"]
+			    = form_for(@store) do |f|
+				      = f.label :codename
+				      = f.text_field :codename, :class => "form-control"
+				      = f.label :address
+				      = f.text_field :address, :class => "form-control"
+				      = f.label :phone
+				      = f.text_field :phone, :class => "form-control"
+				      = submit_tag "Update information", :class => "btn btn-primary form-control"
