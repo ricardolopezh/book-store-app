@@ -33,6 +33,7 @@ class StoresController < ApplicationController
   def update
   	@store = Store.find(params[:id])
   	@store.update_attributes(store_params)
+  	flash[:primary] = "Store information updated"
     redirect_to stores_path
   end
 
