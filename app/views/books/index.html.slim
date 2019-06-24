@@ -18,3 +18,5 @@ table [class="table"]
         td = book.year
         td = link_to "Edit ", edit_book_path(book), method: :get
         td = link_to "Delete", book, method: :delete, data: { confirm: "Are you sure you want to delete this book?" }
+
+= will_paginate(@books, :renderer => WillPaginate::ActionView::Bootstrap4LinkRenderer, class: "pagination justify-content-center")
