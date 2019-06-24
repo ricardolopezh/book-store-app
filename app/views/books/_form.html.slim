@@ -1,0 +1,9 @@
+= form_for(@book) do |f|
+  - #= render 'shared/error_messages'
+  = f.label :title
+  = f.text_field :title, :class => "form-control"
+  = f.label :author
+  = f.text_field :author, :class => "form-control"
+  = f.label :year
+  = f.text_field :year, :class => "form-control"
+  = submit_tag "Save", :class => "btn btn-primary form-control" 
