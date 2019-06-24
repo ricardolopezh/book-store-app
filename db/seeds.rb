@@ -12,3 +12,11 @@
     phone: Faker::PhoneNumber.cell_phone
     }])
 end
+
+10.times do
+	Book.create([{
+		title: Faker::Book.title,
+		author: Faker::Book.author,
+		year: rand(1440..2019)
+	}])
+end
