@@ -21,4 +21,7 @@ html
               = link_to 'Stores', stores_path, class: 'nav-link'
             li [class="nav-item"]
               = link_to 'Books', stores_path, class: 'nav-link'
+    - flash.each do |key, value|
+      div [class="alert alert-#{key}"]
+        = value
     = yield

@@ -10,7 +10,8 @@ class StoresController < ApplicationController
     @store = Store.new(store_params)
 
     if @store.save
-      redirect_to @store
+    	flash[:success] = "Store location added"
+      redirect_to stores_path
     else
     	#Need to improve this
       render 'new'
