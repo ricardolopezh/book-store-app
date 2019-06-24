@@ -1,23 +1,22 @@
-.container
-  h1 Store locations
-  = link_to 'Add new store', newstore_path, class: 'btn btn-success'
-  table [class="table"]
-    thead [class="thead-dark"]
+h1 Store locations
+= link_to 'Add new store', newstore_path, class: 'btn btn-success'
+table [class="table"]
+  thead [class="thead-dark"]
+    tr
+      th ID
+      th Codename
+      th Address
+      th Phone
+      th Edit
+      th Delete
+  tbody
+    - @stores.each do |store|
       tr
-        th ID
-        th Codename
-        th Address
-        th Phone
-        th Edit
-        th Delete
-    tbody
-      - @stores.each do |store|
-        tr
-          th = link_to store.id, store
-          td = store.codename
-          td = store.address
-          td = store.phone
-          td = link_to "Edit ", edit_store_path(store), method: :get
-          td = link_to "Delete", store, method: :delete, data: { confirm: "Are you sure you want to delete this store?" }
+        th = link_to store.id, store
+        td = store.codename
+        td = store.address
+        td = store.phone
+        td = link_to "Edit ", edit_store_path(store), method: :get
+        td = link_to "Delete", store, method: :delete, data: { confirm: "Are you sure you want to delete this store?" }
 
-  = will_paginate(@stores, :renderer => WillPaginate::ActionView::Bootstrap4LinkRenderer, class: "pagination justify-content-center")
+= will_paginate(@stores, :renderer => WillPaginate::ActionView::Bootstrap4LinkRenderer, class: "pagination justify-content-center")
