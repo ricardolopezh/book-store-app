@@ -1,0 +1,7 @@
+- if @book.errors.any?
+  #error_explanation
+    div [class="alert alert-danger"]
+      span The form contains #{pluralize(@book.errors.count, "error")}
+    ul
+      - @book.errors.full_messages.each do |msg|
+        li.text-danger = msg
