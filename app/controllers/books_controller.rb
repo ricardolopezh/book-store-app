@@ -14,7 +14,6 @@ class BooksController < ApplicationController
       flash[:success] = "Book added"
       redirect_to books_path
     else
-      #Need to improve this
       render 'new'
     end
   end

@@ -1,7 +1,9 @@
 class StoresController < ApplicationController
-  def index
-  end
 
+  def index
+    @stores = Store.all.order("created_at DESC").paginate(page: params[:page], per_page: 10)
+  end
+  
   def new
     @store = Store.new
   end
@@ -13,17 +15,12 @@ class StoresController < ApplicationController
     	flash[:success] = "Store location added"
       redirect_to stores_path
     else
-    	#Need to improve this
       render 'new'
     end
   end
 
   def show
     @store = Store.find(params[:id])
-  end
-
-  def index
-    @stores = Store.all.order("created_at DESC").paginate(page: params[:page], per_page: 10)
   end
 
   def edit
@@ -49,5 +46,4 @@ class StoresController < ApplicationController
   def store_params
     params.require(:store).permit(:codename, :address, :phone)
   end
-
 end
