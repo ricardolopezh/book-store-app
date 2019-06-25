@@ -7,6 +7,7 @@ table [class="table"]
       th Title
       th Author
       th Year
+      th Stock
       th Edit
       th Delete
   tbody
@@ -16,6 +17,7 @@ table [class="table"]
         td = book.title
         td = book.author
         td = book.year
+        td = book.quantity
         td = link_to "Edit ", edit_book_path(book), method: :get
         td = link_to "Delete", book, method: :delete, data: { confirm: "Are you sure you want to delete this book?" }
 
