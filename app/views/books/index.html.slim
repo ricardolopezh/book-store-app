@@ -2,12 +2,14 @@ h1 Books
 hr
 .row
   div [class="col-12"]
-    .form-inline
-      = link_to 'Add new store', new_book_path, class: 'btn btn-success'
-      = form_tag("/", {class: 'form-inline'}) do
-        div [class="form-group"]
-          = text_field_tag(:q, "" , :class => "form-control")
-        = submit_tag "Save", :class => "btn btn-secondary form-control", :id => "searchBTN"
+    div [class="form-inline row"]
+      div [class="col-lg-3"]
+        = link_to 'Add new store', new_book_path, class: 'btn btn-success'
+      div [class="col-lg-8"]
+        = form_tag("/", {class: 'form-inline'}) do
+          div [class="form-group"]
+            = text_field_tag(:q, "" , :class => "form-control", :placeholder => "Some text")
+          = submit_tag "Search", :class => "btn btn-secondary form-control", :id => "searchBTN"
 table [class="table"]
   thead [class="thead-dark"]
     tr
