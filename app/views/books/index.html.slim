@@ -1,6 +1,13 @@
 h1 Books
 hr
-= link_to 'Add new store', new_book_path, class: 'btn btn-success'
+.row
+  div [class="col-12"]
+    .form-inline
+      = link_to 'Add new store', new_book_path, class: 'btn btn-success'
+      = form_tag("/", {class: 'form-inline'}) do
+        div [class="form-group"]
+          = text_field_tag(:q, "" , :class => "form-control")
+        = submit_tag "Save", :class => "btn btn-secondary form-control", :id => "searchBTN"
 table [class="table"]
   thead [class="thead-dark"]
     tr

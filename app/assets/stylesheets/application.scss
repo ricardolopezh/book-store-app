@@ -8,6 +8,9 @@ button.btn{
 table.table{
 	margin-top: 16px;
 }
-input[type="submit"]{
+input[type="submit"]#save{
 	margin-top: 32px;
+}
+input[type="submit"]#searchBTN{
+	margin-left: 16px;
 }
