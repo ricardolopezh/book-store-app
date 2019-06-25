@@ -5,9 +5,9 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-50.times do
+10.times do
   Store.create([{
-    codename: Faker::Alphanumeric.alphanumeric(6).upcase, 
+    codename: 'MTY0' + rand(1..99).to_s, 
     address: Faker::Address.street_address, 
     phone: Faker::PhoneNumber.cell_phone
     }])
@@ -15,8 +15,8 @@ end
 
 10.times do
 	Book.create([{
-		title: Faker::Book.title,
-		author: Faker::Book.author,
-		year: rand(1440..2019)
-	}])
+    title: Faker::Book.title,
+    author: Faker::Book.author,
+    year: rand(1440..2019)
+  }])
 end
