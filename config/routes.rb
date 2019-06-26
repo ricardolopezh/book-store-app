@@ -4,5 +4,6 @@ Rails.application.routes.draw do
   resources :stores
   resources :books
   get '/home', to: 'static_pages#home'
+  get '/search', to: 'static_pages#search'
   root 'static_pages#home'
 end

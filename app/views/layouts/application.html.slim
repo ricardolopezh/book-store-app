@@ -21,6 +21,8 @@ html
               = link_to 'Stores', stores_path, class: 'nav-link'
             li [class="nav-item"]
               = link_to 'Books', books_path, class: 'nav-link'
+            li [class="nav-item"]
+              = link_to 'Search', search_path, class: 'nav-link'
     .container
       - flash.each do |key, value|
         div [class="alert alert-#{key}"]
