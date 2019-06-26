@@ -1,6 +1,10 @@
 class BooksController < ApplicationController
   def index
-    @books = Book.all.order("created_at DESC").paginate(page: params[:page], per_page: 10)
+    @books = if params[:term]
+      Book.where('title LIKE :search OR author LIKE :search OR year LIKE :search', search: "%#{params[:term]}%")
+    else
+      @books = Book.all.order("created_at DESC").paginate(page: params[:page], per_page: 10)
+    end
   end
 
   def new
@@ -43,6 +47,6 @@ class BooksController < ApplicationController
   private
 
   def book_params
-    params.require(:book).permit(:title, :author, :year, :quantity)
+    params.require(:book).permit(:title, :author, :year, :quantity, :term)
   end
 end
