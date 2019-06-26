@@ -10,14 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190626031845) do
-
-  create_table "Books_Stores", id: false, force: :cascade do |t|
-    t.integer "Book_id", null: false
-    t.integer "Store_id", null: false
-    t.index ["Book_id", "Store_id"], name: "index_Books_Stores_on_book_id_and_store_id"
-    t.index ["Store_id", "Book_id"], name: "index_Books_Stores_on_store_id_and_book_id"
-  end
+ActiveRecord::Schema.define(version: 20190624174625) do
 
   create_table "books", force: :cascade do |t|
     t.string "title"
@@ -25,7 +18,6 @@ ActiveRecord::Schema.define(version: 20190626031845) do
     t.integer "year"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "quantity", default: 0, null: false
   end
 
   create_table "stores", force: :cascade do |t|
