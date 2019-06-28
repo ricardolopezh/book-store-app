@@ -1,4 +1,5 @@
 = form_for(@assignment) do |f|
+  = render 'shared/assignment_error_messages'
   = f.label :store_id, "Store"
   = f.select :store_id, @store_list, {}, {:class => "form-control"}
   = f.label :book_id, "Book"

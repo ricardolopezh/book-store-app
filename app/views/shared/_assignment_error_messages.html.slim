@@ -1,0 +1,7 @@
+- if @assignment.errors.any?
+  #error_explanation
+    div [class="alert alert-danger"]
+      span The form contains #{pluralize(@assignment.errors.count, "error")}
+    ul
+      - @assignment.errors.full_messages.each do |msg|
+        li.text-danger = msg

@@ -5,7 +5,6 @@ class BooksController < ApplicationController
 
   def new
     @book = Book.new
-    @store_list = Store.all.map { |store| [ store.to_s, store.id ] }
   end
 
   def create
