@@ -2,7 +2,14 @@
   div [class="col-12 col-lg-12"]
     h1 Store
     hr
-    h3 Codename: #{@store.codename} 
-    h4 Address: #{@store.address}
-    h4 Phone: #{@store.phone}
+    .card
+      .card-body
+        h5 Store:
+        p #{@store.codename} 
+        h5 Address:
+        p #{@store.address}
+        h5 Phone:
+        p #{@store.phone}
+    br
+    h5 = link_to 'Go back', stores_path
         

@@ -2,7 +2,18 @@
   div [class="col-12 col-lg-12"]
     h1 Book
     hr
-    h3 Title: #{@book.title} 
-    h4 Author: #{@book.author}
-    h4 Year: #{@book.year}
+    .card
+      .card-body
+        h5 Title: 
+        p #{@book.title} 
+        h5 Author:
+        p #{@book.author}
+        h5 Year:
+        p #{@book.year}
+        h5 Quantity:
+        p #{@book.quantity}
+        h5 Store:
+        p #{@book.store}
+    br
+    h5 = link_to 'Go back', books_path
         
