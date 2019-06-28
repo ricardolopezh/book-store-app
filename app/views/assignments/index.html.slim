@@ -1,8 +1,13 @@
-h1 Assignments Index
+h1 Add a book to a store
 hr
-.row
+div [class="row justify-content-between"]
   .col-8
     = link_to 'Assign book to a store', new_assignment_path, class: 'btn btn-success'
+  .col-4
+    = form_tag(assignments_path, {class: 'form-inline', method: :get}) do
+      div [class="form-group"]
+      = text_field_tag(:term, "" , :class => "form-control", :placeholder => "Search...")
+      = submit_tag "Search", :class => "btn btn-secondary form-control", :id => "searchBTN", name: nil
 table [class="table"]
   thead [class="thead-dark"]
     tr
@@ -21,4 +26,5 @@ table [class="table"]
         td = assignment.quantity
         td = link_to "Edit", edit_assignment_path(assignment), method: :get
         td = link_to "Delete", assignment, method: :delete, data: { confirm: "Are you sure you want to delete this relationship?" }
-= will_paginate(@books, :renderer => WillPaginate::ActionView::Bootstrap4LinkRenderer, class: "pagination justify-content-center")
+- unless params[:term]
+  = will_paginate(@books, :renderer => WillPaginate::ActionView::Bootstrap4LinkRenderer, class: "pagination justify-content-center")

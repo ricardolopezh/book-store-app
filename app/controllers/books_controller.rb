@@ -1,11 +1,6 @@
 class BooksController < ApplicationController
   def index
-    @books = if params[:term]
-      #Book.joins(:store).where('stores.codename LIKE :search OR books.title LIKE :search OR books.author LIKE :search OR books.year LIKE :search', search: "%#{params[:term]}%")
-      Book.where('title LIKE :search OR author LIKE :search OR year LIKE :search', search: "%#{params[:term]}%")
-    else
-      @books = Book.all.order("created_at DESC").paginate(page: params[:page], per_page: 10)
-    end
+    @books = Book.all.order("created_at DESC").paginate(page: params[:page], per_page: 10)
   end
 
   def new

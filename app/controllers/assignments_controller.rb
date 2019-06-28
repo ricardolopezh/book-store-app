@@ -1,7 +1,11 @@
 class AssignmentsController < ApplicationController
 
   def index
-    @assignments = Assignment.all.order("created_at DESC").paginate(page: params[:page], per_page: 10)
+    @assignments = if params[:term]
+      Assignment.joins(:book, :store).where('stores.codename LIKE :search OR books.title LIKE :search OR books.author LIKE :search OR books.year LIKE :search', search: "%#{params[:term]}%")
+    else
+      @assignments = Assignment.all.order("created_at DESC").paginate(page: params[:page], per_page: 10)
+    end
   end
 
   def new
@@ -48,6 +52,6 @@ class AssignmentsController < ApplicationController
   private
 
   def assignment_params
-    params.require(:assignment).permit(:store_id, :book_id, :quantity)
+    params.require(:assignment).permit(:store_id, :book_id, :quantity, :term)
   end
 end

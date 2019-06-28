@@ -1,13 +1,6 @@
 h1 Books
 hr
-div [class="row justify-content-between"]
-  .col-8
-    = link_to 'Add new book', new_book_path, class: 'btn btn-success'
-  .col-4
-    = form_tag(books_path, {class: 'form-inline', method: :get}) do
-      div [class="form-group"]
-      = text_field_tag(:term, "" , :class => "form-control", :placeholder => "Search...")
-      = submit_tag "Search", :class => "btn btn-secondary form-control", :id => "searchBTN", name: nil 
+= link_to 'Add new book', new_book_path, class: 'btn btn-success' 
 table [class="table"]
   thead [class="thead-dark"]
     tr
@@ -26,5 +19,4 @@ table [class="table"]
         td = book.year
         td = link_to "Edit ", edit_book_path(book), method: :get
         td = link_to "Delete", book, method: :delete, data: { confirm: "Are you sure you want to delete this book?" }
-- unless params[:term]
-  = will_paginate(@books, :renderer => WillPaginate::ActionView::Bootstrap4LinkRenderer, class: "pagination justify-content-center")
+= will_paginate(@books, :renderer => WillPaginate::ActionView::Bootstrap4LinkRenderer, class: "pagination justify-content-center")
