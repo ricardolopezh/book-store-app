@@ -1,0 +1,8 @@
+= form_for(@assignment) do |f|
+  = f.label :store_id, "Store"
+  = f.select :store_id, @store_list, {}, {:class => "form-control"}
+  = f.label :book_id, "Book"
+  = f.select :book_id, @book_list, {}, {:class => "form-control"}
+  = f.label :quantity
+  = f.number_field :quantity, :class => "form-control", :step => 1, :min => 1
+  = submit_tag "Save", :class => "btn btn-primary form-control", :id => "save"

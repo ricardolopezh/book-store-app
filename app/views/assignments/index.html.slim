@@ -1,0 +1,24 @@
+h1 Assignments Index
+hr
+.row
+  .col-8
+    = link_to 'Assign book to a store', new_assignment_path, class: 'btn btn-success'
+table [class="table"]
+  thead [class="thead-dark"]
+    tr
+      th ID
+      th Store
+      th Book
+      th Quantity
+      th Edit
+      th Delete
+  tbody
+    - @assignments.each do |assignment|
+      tr
+        th = link_to assignment.id, assignment
+        td = assignment.store
+        td = assignment.book
+        td = assignment.quantity
+        td = link_to "Edit", edit_assignment_path(assignment), method: :get
+        td = link_to "Delete", assignment, method: :delete, data: { confirm: "Are you sure you want to delete this relationship?" }
+= will_paginate(@books, :renderer => WillPaginate::ActionView::Bootstrap4LinkRenderer, class: "pagination justify-content-center")

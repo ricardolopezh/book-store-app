@@ -1,0 +1,14 @@
+.row
+  div [class="col-12 col-lg-12"]
+    h1 Books in stores
+    hr
+    .card
+      .card-body
+        h5 Store: 
+        p #{@assignment.store} 
+        h5 Book:
+        p #{@assignment.book}
+        h5 Quantity:
+        p #{@assignment.quantity}
+    br
+    h5 = link_to 'Go back', assignments_path
