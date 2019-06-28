@@ -9,6 +9,7 @@ class BooksController < ApplicationController
 
   def new
     @book = Book.new
+    @store_list = Store.all.map { |store| [ store.to_s, store.id ] }
   end
 
   def create
@@ -28,6 +29,7 @@ class BooksController < ApplicationController
 
   def edit
     @book = Book.find(params[:id])
+    @store_list = Store.all.map { |store| [ store.to_s, store.id ] }
   end
 
   def update
@@ -47,6 +49,6 @@ class BooksController < ApplicationController
   private
 
   def book_params
-    params.require(:book).permit(:title, :author, :year, :term)
+    params.require(:book).permit(:title, :author, :year, :term, :quantity, :store_id)
   end
 end

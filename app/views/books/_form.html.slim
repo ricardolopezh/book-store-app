@@ -6,4 +6,8 @@
   = f.text_field :author, :class => "form-control"
   = f.label :year
   = f.text_field :year, :class => "form-control"
+  = f.label :quantity
+  = f.number_field :quantity, :class => "form-control", :step => 1, :min => 1
+  = f.label :store_id, "Store"
+  = f.select :store_id, @store_list, {}, {:class => "form-control"}
   = submit_tag "Save", :class => "btn btn-primary form-control", :id => "save"
