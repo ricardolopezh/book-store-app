@@ -17,8 +17,6 @@ end
 	Book.create([{
     title: Faker::Book.title,
     author: Faker::Book.author,
-    year: rand(1440..2019),
-    quantity: rand(1..1000),
-    store_id: rand(1..10)
+    year: rand(1440..2019)
   }])
 end

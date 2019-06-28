@@ -28,9 +28,6 @@ ActiveRecord::Schema.define(version: 20190628152107) do
     t.integer "year"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "quantity"
-    t.integer "store_id"
-    t.index ["store_id"], name: "index_books_on_store_id"
   end
 
   create_table "stores", force: :cascade do |t|
