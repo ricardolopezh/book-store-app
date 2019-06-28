@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 20190628020016) do
     t.integer "year"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "quantity"
+    t.integer "quantity"
     t.integer "store_id"
     t.index ["store_id"], name: "index_books_on_store_id"
   end
