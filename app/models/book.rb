@@ -1,5 +1,6 @@
 class Book < ApplicationRecord
-  belongs_to :store
+  has_many :assignments
+  has_many :stores, through: :assignments
   validates :title, presence: true, length: { maximum: 80 }
   validates :author, presence: true, length: { maximum: 80 }
   validates :year, presence: true, length: { maximum: 4 }

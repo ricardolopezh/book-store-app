@@ -1,5 +1,6 @@
 class Store < ApplicationRecord
-  has_many :books
+  has_many :assignments
+  has_many :books, through: :assignments
   validates :codename, presence: true, length: { maximum: 6 },
                        uniqueness: { case_sensitive: false }
   validates :address, presence: true, length: { maximum: 120 }
