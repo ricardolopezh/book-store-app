@@ -2,7 +2,11 @@ require 'test_helper'
 
 class BookTest < ActiveSupport::TestCase
   def setup
-    @book = Book.new(title: "The Catcher in the Rye", author: "J.D. Salinger", year: 1951, quantity: 100, store_id: 1)
+    @book = Book.new(title: "The Catcher in the Rye", author: "J.D. Salinger", year: 1951)
+  end
+
+  test "should be valid" do
+    assert @book.valid?
   end
 
   test "title should be present" do
@@ -31,7 +35,7 @@ class BookTest < ActiveSupport::TestCase
   end
 
   test "year should not be too long" do
-    @book.year = 1 * 5
+    @book.year = 1 * 10000
     assert_not @book.valid?
   end
 end
