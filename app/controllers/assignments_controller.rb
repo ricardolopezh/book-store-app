@@ -18,7 +18,7 @@ class AssignmentsController < ApplicationController
     @assignment = Assignment.new(assignment_params)
 
     if @assignment.save
-      flash[:success] = "Book added"
+      flash[:success] = "Book added to store"
       redirect_to assignments_path
     else
       render 'new'
@@ -43,7 +43,7 @@ class AssignmentsController < ApplicationController
   def destroy
     @assignments = Assignment.find(params[:id])
     @assignments.destroy
-    flash[:danger] = "Books deleted"
+    flash[:danger] = "Books deleted from stores"
     redirect_to assignments_path
   end
 
